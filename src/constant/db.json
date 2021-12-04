@@ -1,0 +1,15 @@
+{
+  "todo": [
+    {
+      "status": 0,
+      "activity": "Makan",
+      "id": 1,
+      "isFinished": true
+    },
+    {
+      "status": 1,
+      "activity": "Mandi",
+      "id": 2
+    }
+  ]
+}

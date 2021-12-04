@@ -1,6 +1,5 @@
 const initState = {
   todoList: [],
-  newData: [],
   inputTodo: "",
   todoCount: 0,
 };
@@ -22,12 +21,6 @@ export default (state = initState, action) => {
         ...state,
         inputTodo: action.payload,
       };
-    case "NEW_DATA":
-      return {
-        ...state,
-        newData: [...state.newData, action.payload],
-      };
-    // break;
     default:
       return state;
   }

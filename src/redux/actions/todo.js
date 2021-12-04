@@ -55,18 +55,9 @@ export const completeTodo = (id) => {
   };
 };
 
-export const addTodo = () => {
+export const addTodo = (user) => {
   return (dispatch) => {
-    const min = 1;
-    const max = 100;
-    const rand = min + Math.random() * (max - min);
-    Axios.post("http://localhost:3000/todo", {
-      id: Math.floor(rand),
-      title: store.getState().todo.inputTodo,
-      description: store.getState().todo.inputTodo,
-      status: store.getState().todo.inputTodo,
-      // isFinished: false,
-    })
+    Axios.post("http://localhost:3000/todo", user)
       .then(() => {
         alert("Success added Todo");
         dispatch({

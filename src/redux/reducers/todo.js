@@ -1,6 +1,12 @@
 const initState = {
   todoList: [],
-  inputTodo: "",
+  inputTodo: {
+    id: 0,
+    title: "",
+    description: "",
+    status: 0,
+    createdAt: "",
+  },
   todoCount: 0,
 };
 

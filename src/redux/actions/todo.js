@@ -36,12 +36,11 @@ export const inputTodo = (input) => {
   };
 };
 
-export const completeTodo = (id) => {
+export const editTodo = (id, user) => {
   return (dispatch) => {
-    Axios.patch(`http://localhost:3000/todo/${id}`, {
-      isFinished: true,
-    })
-      .then(() => {
+    Axios.put(`http://localhost:3000/todo/${id}`, user)
+      .then((res) => {
+        console.log(res);
         alert("Berhasil Complete todo!");
         dispatch({
           type: "GET_TODO_LIST",
@@ -50,6 +49,7 @@ export const completeTodo = (id) => {
         store.dispatch(fetchTodoGlobal());
       })
       .catch((err) => {
+        console.log(err);
         alert("Terjadi Kesalahan di server!!");
       });
   };

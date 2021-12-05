@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { editTodo } from "../redux/actions/todo";
 import Modal from "../component/Modal/Modal";
 
-const TodoItem = (props) => {
+const TodoItem2 = (props) => {
   const [show, setShow] = useState(false);
   const [edit, setEdit] = useState(false);
   const [user, setUser] = useState({
@@ -155,4 +155,4 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
   editTodo,
-})(TodoItem);
+})(TodoItem2);

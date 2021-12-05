@@ -9,9 +9,9 @@ const TodoItem = (props) => {
   const [edit, setEdit] = useState(false);
   const [user, setUser] = useState({
     id: props.todoData.id,
-    title: "",
-    description: "",
-    status: parseInt(0),
+    title: props.todoData.title,
+    description: props.todoData.description,
+    status: parseInt(props.todoData.status),
     createdAt: props.todoData.createdAt,
   });
 
@@ -78,7 +78,7 @@ const TodoItem = (props) => {
                     <input
                       type="text"
                       name="title"
-                      value={user.title || props.todoData.title}
+                      value={user.title}
                       className="form-control"
                       onChange={inputHandler}
                     />
@@ -87,14 +87,14 @@ const TodoItem = (props) => {
                     <input
                       type="text"
                       name="description"
-                      value={user.description || props.todoData.description}
+                      value={user.description}
                       className="form-control"
                       onChange={inputHandler}
                     />
                   </td>
                   <select
                     className="form-control mt-1"
-                    value={user.status || props.todoData.status}
+                    value={user.status}
                     name="status"
                     id="inlineFormCustomSelect"
                     onChange={inputHandler}

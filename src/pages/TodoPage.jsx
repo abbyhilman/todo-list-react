@@ -87,9 +87,30 @@ class TodoPage extends React.Component {
   };
 
   handleSubmit = (e) => {
+    var currentdate = new Date();
+    var datetime =
+      currentdate.getFullYear() +
+      "-" +
+      (currentdate.getMonth() + 1) +
+      "-" +
+      currentdate.getDate() +
+      " " +
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes();
     e.preventDefault();
 
     this.props.addTodo(this.state.user);
+
+    this.setState({
+      user: {
+        id: "",
+        title: "",
+        description: "",
+        status: parseInt(0),
+        createdAt: datetime,
+      },
+    });
   };
 
   render() {
